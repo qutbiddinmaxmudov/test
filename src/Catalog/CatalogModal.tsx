@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal } from '@mui/material'
-import { Box } from '@mui/system'
+import { Box, maxHeight, styled } from '@mui/system'
 import { dataType } from '.'
 
 type Props = {
@@ -8,6 +8,12 @@ type Props = {
   handleClose: () => void
   data: dataType | null
 }
+
+const Img = styled('img')({
+  maxWidth: '100%',
+  maxHeight: '100%',
+  display: 'block',
+})
 
 const CatalogModal = ({ open, handleClose, data }: Props) => {
   return (
@@ -22,8 +28,8 @@ const CatalogModal = ({ open, handleClose, data }: Props) => {
         justifyContent: 'center',
       }}
     >
-      <Box>
-        <img src={data?.url} alt={data?.title} loading="lazy" />
+      <Box maxHeight={'90%'} maxWidth={'90%'}>
+        <Img src={data?.url} alt={data?.title} loading="lazy" />
       </Box>
     </Modal>
   )

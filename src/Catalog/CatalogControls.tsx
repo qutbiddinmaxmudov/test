@@ -35,11 +35,6 @@ const CatalogControls = ({ count, setPhotos }: Props) => {
   return (
     <TablePagination
       sx={{
-        color: 'white',
-        position: 'sticky',
-        top: 0,
-        zIndex: 5,
-        backdropFilter: 'blur(15px)',
         marginBottom: 0,
       }}
       component="div"
